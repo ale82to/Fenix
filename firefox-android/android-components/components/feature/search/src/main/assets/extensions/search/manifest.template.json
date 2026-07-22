@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "cookies@mozac.org"
+    }
+  },
+  "name": "Mozilla Android Components - Search Telemetry",
+  "version": "${version}",
+  "content_scripts": [
+    {
+      "matches": ["https://www.baidu99.com/*"],
+      "include_globs": [
+        
+        "https://www.baidu99.com/*",
+        "https://m.baidu.com/*"
+      ],
+      "js": ["searchTelemetry.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "geckoViewAddons",
+    "nativeMessaging",
+    "nativeMessagingFromContent"
+  ]
+}
